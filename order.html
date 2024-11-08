@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Online - [Bakery Name]</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f2ed;
+            color: #333;
+        }
+        header {
+            background-color: #d2691e;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .main-content {
+            max-width: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #d2691e;
+            margin-top: 0;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        input[type="time"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .order-item {
+            margin-top: 15px;
+        }
+        .order-item select,
+        .order-item input {
+            width: 100%;
+        }
+        .button {
+            background-color: #8b4513;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            width: 100%;
+        }
+        .button:hover {
+            background-color: #a0522d;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #666;
+            padding: 10px;
+            background-color: #f1e4d7;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Place Your Order - [Bakery Name]</h1>
+        <p>Freshly baked goodness, ready for pickup!</p>
+    </header>
+
+    <div class="main-content">
+        <h2>Order Form</h2>
+        <form action="submit_order.php" method="post">
+            
+            <!-- Customer Information -->
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <!-- Pickup Information -->
+            <label for="pickup-date">Pickup Date:</label>
+            <input type="date" id="pickup-date" name="pickup-date" required>
+            
+            <label for="pickup-time">Pickup Time:</label>
+            <input type="time" id="pickup-time" name="pickup-time" required>
+
+            <!-- Order Items -->
+            <div class="order-item">
+                <label for="product">Select Item:</label>
+                <select id="product" name="product">
+                    <option value="bread">Artisan Bread</option>
+                    <option value="croissant">Croissant</option>
+                    <option value="cake">Custom Cake</option>
+                    <option value="pastry">Assorted Pastry Box</option>
+                </select>
+            </div>
+
+            <div class="order-item">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" min="1" required>
+            </div>
+
+            <!-- Special Instructions -->
+            <label for="notes">Special Instructions:</label>
+            <textarea id="notes" name="notes" rows="4" placeholder="E.g., Nut-free, extra frosting, etc."></textarea>
+
+            <!-- Submit Button -->
+            <button type="submit" class="button">Submit Order</button>
+        </form>
+    </div>
+
+</body>
+</html>
